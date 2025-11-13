@@ -2,11 +2,11 @@
   "personal": {
     "name": {
       "en": "Haopeng Yu",
-      "cn": "于昊鹏"
+      "cn": "于昊澎"
     },
     "title": {
       "en": "AI in Biology Researcher",
-      "cn": "人工智能 × 生物学 研究员"
+      "cn": "人工智能 × 生物学"
     },
     "subtitle": {
       "en": "Postdoctoral Scientist | HFSP Fellow | John Innes Centre",
@@ -23,7 +23,7 @@
       },
       "institution": {
         "en": "Direct PhD Program, Northwest A&F University, Yangling, Shaanxi, China",
-        "cn": "西北农林科技大学 直博项目，陕西杨凌，中国"
+        "cn": "西北农林科技大学 硕博连读项目，陕西杨凌，中国"
       }
     },
     {
@@ -43,7 +43,7 @@
       "year": "2021-Present",
       "position": {
         "en": "Postdoctoral Scientist",
-        "cn": "博士后研究员"
+        "cn": "博士后科学家"
       },
       "details": [
         {
@@ -78,7 +78,7 @@
       },
       "description": {
         "en": "PlantAIGenius: Revolutionizing Plant Science Research with AI",
-        "cn": "植物AI天才：用人工智能革新植物科学研究"
+        "cn": "植物AI：用人工智能革新植物科学研究"
       },
       "role": {
         "en": "Co-investigator",
@@ -124,24 +124,12 @@
       "year": "2022",
       "title": {
         "en": "GENius of the Month",
-        "cn": "本月基因天才奖"
+        "cn": "约翰英纳斯中心天才奖"
       },
       "institution": {
         "en": "John Innes Centre",
         "cn": "约翰英纳斯中心"
       }
-    },
-    {
-      "year": "2014-2019",
-      "title": {
-        "en": "Academic Scholarship (each year)",
-        "cn": "学业奖学金（每年）"
-      },
-      "institution": {
-        "en": "Northwest A&F University",
-        "cn": "西北农林科技大学"
-      },
-      "amount": "￥30K"
     }
   ],
   "academicService": {
@@ -152,7 +140,7 @@
       },
       "journals": {
         "en": "Briefings in Bioinformatics, Nature, NAR Genomics and Bioinformatics, Non-Coding RNA, Computational and Structural Biotechnology Journal",
-        "cn": "《生物信息学简报》、《自然》、《NAR基因组学与生物信息学》、《非编码RNA》、《计算与结构生物技术杂志》"
+        "cn": "《自然》、《生物信息学简报》、《NAR基因组学与生物信息学》、《非编码RNA》、《计算与结构生物技术杂志》"
       }
     },
     "editorial": {
@@ -202,7 +190,7 @@
       "type": "Oral",
       "title": {
         "en": "RNA-AI Conference - Monte Verita, Switzerland",
-        "cn": "RNA-AI会议 - 瑞士真理之山"
+        "cn": "2025 RNA-AI会议 - 瑞士真理之山"
       }
     },
     {
@@ -210,7 +198,7 @@
       "type": "Oral",
       "title": {
         "en": "CEPAMS Annual Symposium - Shanghai, China",
-        "cn": "CEPAMS年度研讨会 - 中国上海"
+        "cn": "2025 CEPAMS年度研讨会 - 中国上海"
       }
     },
     {
@@ -234,7 +222,7 @@
       "type": "Poster",
       "title": {
         "en": "20th RSC Nucleic Acids Forum - London, UK",
-        "cn": "第20届RSC核酸论坛 - 英国伦敦"
+        "cn": "第20届英国皇家化学院RSC核酸论坛 - 英国伦敦"
       }
     },
     {
@@ -266,7 +254,7 @@
       "type": "Oral",
       "title": {
         "en": "19th RSC Nucleic Acids Forum - London, UK",
-        "cn": "第19届RSC核酸论坛 - 英国伦敦"
+        "cn": "第19届英国皇家化学院RSC核酸论坛 - 英国伦敦"
       }
     },
     {
