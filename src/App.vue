@@ -428,38 +428,35 @@ const handleScroll = () => {
   z-index: 1;
 }
 
-/* Scan line effect */
+/* Subtle scan line effect */
 .profile-section::before {
   content: '';
   position: absolute;
-  left: -50%;
-  right: -50%;
-  height: 2px;
+  left: 0;
+  right: 0;
+  height: 1px;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(14, 165, 233, 0.3) 20%,
-    rgba(139, 92, 246, 0.5) 50%,
-    rgba(236, 72, 153, 0.3) 80%,
+    rgba(14, 165, 233, 0.15) 50%,
     transparent 100%);
-  box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
-  animation: scanLine 8s ease-in-out infinite;
+  animation: scanLine 12s ease-in-out infinite;
   z-index: -1;
-  opacity: 0.4;
+  opacity: 0;
 }
 
 @keyframes scanLine {
-  0%, 100% {
+  0%, 20%, 100% {
     top: 0;
     opacity: 0;
   }
-  10% {
-    opacity: 0.4;
+  30% {
+    opacity: 0.2;
   }
   50% {
     top: 100%;
-    opacity: 0.4;
+    opacity: 0.2;
   }
-  60% {
+  70% {
     opacity: 0;
   }
 }
@@ -526,10 +523,7 @@ const handleScroll = () => {
   font-family: 'Crimson Text', serif;
   font-size: 38px;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
   margin: 0 0 12px 0;
   letter-spacing: -0.02em;
   position: relative;
@@ -538,10 +532,7 @@ const handleScroll = () => {
 .profile-title {
   font-size: 18px;
   font-weight: 600;
-  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-tertiary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
   margin: 0 0 16px 0;
   position: relative;
 }
@@ -740,9 +731,25 @@ const handleScroll = () => {
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+
+/* Tablet landscape - smaller left panel ratio */
+@media (max-width: 1200px) and (orientation: landscape) {
+  .left-fixed-panel {
+    width: 320px;
+  }
+
+  .two-column-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* Tablet/Mobile portrait - vertical scrolling layout */
+@media (max-width: 1024px) and (orientation: portrait), (max-width: 768px) {
   .main-container {
     flex-direction: column;
+    height: auto;
+    overflow-y: auto;
   }
 
   .left-fixed-panel {
@@ -751,10 +758,14 @@ const handleScroll = () => {
     height: auto;
     top: 0;
     padding: 32px 24px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .right-content-panel {
     padding: 32px 24px;
+    height: auto;
+    overflow-y: visible;
   }
 
   .two-column-layout {
@@ -766,34 +777,39 @@ const handleScroll = () => {
     flex-wrap: wrap;
     gap: 12px;
   }
-}
 
-@media (max-width: 768px) {
   .photo-wrapper {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
   }
 
   .profile-name {
     font-size: 32px;
   }
 
+  .profile-title {
+    font-size: 16px;
+  }
+
+  .profile-subtitle {
+    font-size: 14px;
+  }
+
   .section-title {
     font-size: 26px;
   }
 
-  .publication-card {
-    min-width: 280px;
-    max-width: 280px;
-  }
-
-  .publication-card.expanded {
-    min-width: 320px;
-    max-width: 320px;
-  }
-
   .nav-content {
     padding: 12px 16px;
+  }
+
+  .publication-item {
+    grid-template-columns: 80px 1fr;
+    padding: 20px;
+  }
+
+  .pub-year-badge {
+    font-size: 16px;
   }
 }
 </style>
