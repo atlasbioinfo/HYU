@@ -48,6 +48,27 @@
             <h1 class="profile-name">{{ resumeData.personal.name[currentLang] }}</h1>
             <p class="profile-title">{{ resumeData.personal.title[currentLang] }}</p>
             <p class="profile-subtitle">{{ resumeData.personal.subtitle[currentLang] }}</p>
+            <p class="profile-intro">{{ resumeData.personal.intro[currentLang] }}</p>
+            <div class="social-links">
+              <a :href="'mailto:' + resumeData.personal.social.email" target="_blank" :title="currentLang === 'en' ? 'Email' : '邮箱'" class="social-link">
+                <n-icon size="20"><MailOutline /></n-icon>
+              </a>
+              <a :href="resumeData.personal.social.linkedin" target="_blank" :title="'LinkedIn'" class="social-link">
+                <n-icon size="20"><LogoLinkedin /></n-icon>
+              </a>
+              <a :href="resumeData.personal.social.twitter" target="_blank" :title="'X (Twitter)'" class="social-link">
+                <n-icon size="20"><LogoTwitter /></n-icon>
+              </a>
+              <a :href="resumeData.personal.social.bluesky" target="_blank" :title="'Bluesky'" class="social-link">
+                <n-icon size="20"><LogoMastodon /></n-icon>
+              </a>
+              <a :href="resumeData.personal.social.googleScholar" target="_blank" :title="'Google Scholar'" class="social-link">
+                <n-icon size="20"><SchoolOutline /></n-icon>
+              </a>
+              <a :href="resumeData.personal.social.github" target="_blank" :title="'GitHub'" class="social-link">
+                <n-icon size="20"><LogoGithub /></n-icon>
+              </a>
+            </div>
           </div>
         </aside>
 
@@ -84,34 +105,7 @@
 
           <!-- Publications Section -->
           <section id="publications" class="content-section">
-            <h2 class="section-title">
-              {{ currentLang === 'en' ? 'Publications' : '学术出版物' }}
-            </h2>
-            <div class="publications-list">
-              <div
-                v-for="(pub, index) in resumeData.publications"
-                :key="index"
-                class="publication-item"
-              >
-                <div class="pub-year-badge">{{ pub.year }}</div>
-                <div class="pub-content">
-                  <h4 class="pub-title">{{ pub.title }}</h4>
-                  <p class="pub-authors">{{ pub.authors }}</p>
-                  <p class="pub-journal">
-                    <strong>{{ pub.journal }}</strong>
-                    <span v-if="pub.volume"> · {{ pub.volume }}</span>
-                  </p>
-                  <a v-if="pub.doi" :href="pub.doi" target="_blank" class="pub-doi-link">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    DOI: {{ pub.doi.replace('https://doi.org/', '') }}
-                  </a>
-                </div>
-              </div>
-            </div>
+            <Publications :data="resumeData.publications" :lang="currentLang" />
           </section>
 
           <!-- Footer -->
@@ -140,7 +134,13 @@ import {
 } from 'naive-ui'
 import {
   MoonOutline,
-  SunnyOutline
+  SunnyOutline,
+  MailOutline,
+  LogoLinkedin,
+  LogoTwitter,
+  LogoGithub,
+  SchoolOutline,
+  LogoMastodon
 } from '@vicons/ionicons5'
 
 import resumeData from './data/resume.json'
@@ -149,6 +149,7 @@ import Employment from './components/Employment.vue'
 import Grants from './components/Grants.vue'
 import Awards from './components/Awards.vue'
 import Presentations from './components/Presentations.vue'
+import Publications from './components/Publications.vue'
 import ParticlesBackground from './components/ParticlesBackground.vue'
 import VisitorStats from './components/VisitorStats.vue'
 
@@ -421,12 +422,58 @@ const handleScroll = () => {
   font-size: 15px;
   color: var(--text-secondary);
   line-height: 1.7;
-  margin: 0;
+  margin: 0 0 20px 0;
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid var(--accent-primary);
   width: fit-content;
   animation: typing 3.5s steps(60, end), blink 0.75s step-end infinite;
+}
+
+.profile-intro {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0 0 24px 0;
+  text-align: center;
+  padding: 0 12px;
+  font-style: italic;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.social-link:hover {
+  background: var(--accent-primary);
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-primary);
+}
+
+.social-link:active {
+  transform: translateY(-1px) scale(1.02);
 }
 
 @keyframes typing {
@@ -483,102 +530,6 @@ const handleScroll = () => {
 
 .column {
   min-width: 0;
-}
-
-/* Publications List */
-.publications-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.publication-item {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 24px;
-  padding: 24px;
-  background: var(--bg-secondary);
-  border-radius: 12px;
-  border-left: 4px solid var(--accent-primary);
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-sm);
-}
-
-.publication-item:hover {
-  transform: translateX(8px);
-  box-shadow: var(--shadow-md);
-  background: var(--bg-primary);
-  border-left-width: 6px;
-}
-
-.pub-year-badge {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--accent-primary);
-  text-align: center;
-  padding-top: 4px;
-}
-
-.pub-content {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.pub-title {
-  font-family: 'Crimson Text', serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0;
-  line-height: 1.5;
-}
-
-.pub-authors {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin: 0;
-  line-height: 1.6;
-}
-
-.pub-journal {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin: 4px 0;
-}
-
-.pub-journal strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-.pub-doi-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  color: var(--accent-primary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s;
-  margin-top: 4px;
-}
-
-.pub-doi-link:hover {
-  color: var(--accent-secondary);
-  transform: translateX(4px);
-}
-
-.pub-doi-link svg {
-  flex-shrink: 0;
-}
-
-.pub-note {
-  display: inline-block;
-  font-size: 12px;
-  color: var(--accent-tertiary);
-  font-weight: 600;
-  margin-top: 4px;
 }
 
 /* Footer */
@@ -685,15 +636,6 @@ const handleScroll = () => {
 
   .nav-content {
     padding: 12px 16px;
-  }
-
-  .publication-item {
-    grid-template-columns: 80px 1fr;
-    padding: 20px;
-  }
-
-  .pub-year-badge {
-    font-size: 16px;
   }
 }
 </style>
