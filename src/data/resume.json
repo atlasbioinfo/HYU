@@ -12,7 +12,19 @@
       "en": "Postdoctoral Scientist | HFSP Fellow | John Innes Centre",
       "cn": "博士后研究员 | HFSP学者 | 约翰英纳斯中心"
     },
-    "photo": "img/hyu_photo.png"
+    "intro": {
+      "en": "Hi, I'm Haopeng. I'm committed to developing the next generation of AI–human collaborative paradigms for biological research.",
+      "cn": "你好，我是昊澎。我致力于开发下一代人工智能与人类协作范式，用于生物学研究。"
+    },
+    "photo": "img/hyu_photo.png",
+    "social": {
+      "email": "haopeng.yu@jic.ac.uk",
+      "linkedin": "https://www.linkedin.com/in/haopeng-yu-407137283/",
+      "twitter": "https://x.com/HaopengYu",
+      "bluesky": "https://bsky.app/profile/haopengyu.bsky.social",
+      "googleScholar": "https://scholar.google.com/citations?user=5OjpkakAAAAJ&hl=en",
+      "github": "https://github.com/atlasbioinfo"
+    }
   },
   "education": [
     {
