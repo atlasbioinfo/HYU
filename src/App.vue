@@ -258,15 +258,17 @@ const toggleTheme = () => {
 
 /* Left Fixed Panel */
 .left-fixed-panel {
-  position: sticky;
-  top: 80px;
+  position: fixed;
+  left: 0;
+  top: 60px;
   width: 420px;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 60px);
   padding: 48px 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .profile-section {
@@ -323,8 +325,10 @@ const toggleTheme = () => {
 /* Right Content Panel */
 .right-content-panel {
   flex: 1;
+  margin-left: 420px;
   padding: 48px 48px 48px 32px;
   overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .content-section {
@@ -363,7 +367,7 @@ const toggleTheme = () => {
   display: flex;
   gap: 24px;
   overflow-x: auto;
-  padding: 24px 8px 32px 8px;
+  padding: 48px 8px 32px 8px;
   position: relative;
   scroll-snap-type: x mandatory;
 }
@@ -371,40 +375,43 @@ const toggleTheme = () => {
 .timeline-track::before {
   content: '';
   position: absolute;
-  top: 80px;
+  top: 92px;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(to right, #2563eb, #3b82f6, #60a5fa);
+  height: 4px;
+  background: linear-gradient(to right, #2563eb, #3b82f6, #60a5fa, #93c5fd);
   z-index: 0;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
 }
 
 .publication-card {
   position: relative;
-  min-width: 320px;
-  max-width: 320px;
+  min-width: 340px;
+  max-width: 340px;
   background: var(--bg-primary);
   border: 2px solid var(--border-color);
   border-radius: 16px;
-  padding: 24px;
+  padding: 28px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   scroll-snap-align: start;
   z-index: 1;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .publication-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-12px);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.2);
   border-color: #2563eb;
 }
 
 .publication-card.expanded {
-  min-width: 400px;
-  max-width: 400px;
+  min-width: 420px;
+  max-width: 420px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border-color: transparent;
+  box-shadow: 0 16px 48px rgba(102, 126, 234, 0.35);
 }
 
 .publication-card.expanded .pub-year,
@@ -415,38 +422,58 @@ const toggleTheme = () => {
 
 .pub-year {
   position: absolute;
-  top: -32px;
+  top: -40px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  color: #2563eb;
-  background: var(--bg-primary);
-  padding: 4px 16px;
-  border-radius: 20px;
-  border: 2px solid #2563eb;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  padding: 6px 20px;
+  border-radius: 24px;
+  border: none;
   white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  font-family: 'Crimson Text', serif;
+  letter-spacing: 0.5px;
 }
 
 .pub-marker {
   position: absolute;
-  top: 56px;
+  top: 68px;
   left: 50%;
   transform: translateX(-50%);
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   background: #2563eb;
-  border: 4px solid var(--bg-primary);
+  border: 5px solid var(--bg-primary);
   border-radius: 50%;
   z-index: 2;
+  box-shadow: 0 0 0 3px #2563eb, 0 3px 10px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s;
+}
+
+.publication-card:hover .pub-marker {
+  transform: translateX(-50%) scale(1.2);
+  box-shadow: 0 0 0 4px #2563eb, 0 4px 16px rgba(37, 99, 235, 0.6);
 }
 
 .publication-card.expanded .pub-marker {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background: white;
   border-color: #667eea;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 0 0 5px #667eea, 0 4px 20px rgba(102, 126, 234, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 5px #667eea, 0 4px 20px rgba(102, 126, 234, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(102, 126, 234, 0.6), 0 4px 24px rgba(102, 126, 234, 0.7);
+  }
 }
 
 .pub-content {
@@ -564,6 +591,7 @@ const toggleTheme = () => {
   }
 
   .right-content-panel {
+    margin-left: 0;
     padding: 32px 24px;
   }
 
@@ -593,17 +621,25 @@ const toggleTheme = () => {
   }
 
   .publication-card {
-    min-width: 280px;
-    max-width: 280px;
+    min-width: 300px;
+    max-width: 300px;
   }
 
   .publication-card.expanded {
-    min-width: 320px;
-    max-width: 320px;
+    min-width: 340px;
+    max-width: 340px;
   }
 
   .nav-content {
     padding: 12px 16px;
+  }
+
+  .nav-links {
+    font-size: 13px;
+  }
+
+  .nav-link {
+    padding: 6px 8px;
   }
 }
 </style>
