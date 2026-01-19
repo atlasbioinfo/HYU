@@ -1,21 +1,17 @@
 <template>
   <div class="publications-component">
-    <h2 class="section-title">
-      {{ lang === 'en' ? 'Publications' : '学术出版物' }}
-    </h2>
+    <h2 class="section-title">Publications</h2>
 
     <!-- Filter Controls -->
     <div class="filter-controls">
       <div class="filter-group">
-        <label class="filter-label">
-          {{ lang === 'en' ? 'Filter by Year:' : '按年份筛选：' }}
-        </label>
+        <label class="filter-label">Filter by Year:</label>
         <div class="year-tags">
           <button
             :class="['year-tag', { active: selectedYear === null }]"
             @click="selectedYear = null"
           >
-            {{ lang === 'en' ? 'All' : '全部' }} ({{ data.length }})
+            All ({{ data.length }})
           </button>
           <button
             v-for="year in availableYears"
@@ -38,7 +34,7 @@
       >
         <div class="year-header">
           <h3 class="year-title">{{ year }}</h3>
-          <span class="year-count">{{ getYearPublications(year).length }} {{ lang === 'en' ? 'publications' : '篇' }}</span>
+          <span class="year-count">{{ getYearPublications(year).length }} publications</span>
         </div>
         <div class="publications-list">
           <div
@@ -79,10 +75,6 @@ const props = defineProps({
   data: {
     type: Array,
     required: true
-  },
-  lang: {
-    type: String,
-    default: 'en'
   }
 })
 

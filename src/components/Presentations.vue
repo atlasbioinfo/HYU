@@ -1,13 +1,13 @@
 <template>
   <section class="section">
-    <h2 class="section-title">{{ lang === 'en' ? 'Selected Presentations' : '主要学术报告' }}</h2>
+    <h2 class="section-title">Selected Presentations</h2>
 
     <div class="presentations-list">
       <div v-for="(item, index) in data" :key="index" class="presentation-item">
         <div class="pres-year">{{ item.year }}</div>
         <div class="pres-content">
           <span class="pres-type-badge" :class="item.type.toLowerCase()">{{ item.type }}</span>
-          <p class="pres-title">{{ item.title[lang] }}</p>
+          <p class="pres-title">{{ item.title }}</p>
         </div>
       </div>
     </div>
@@ -18,10 +18,6 @@
 defineProps({
   data: {
     type: Array,
-    required: true
-  },
-  lang: {
-    type: String,
     required: true
   }
 })
