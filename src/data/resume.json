@@ -1,21 +1,9 @@
 {
   "personal": {
-    "name": {
-      "en": "Haopeng Yu",
-      "cn": "于昊澎"
-    },
-    "title": {
-      "en": "AI in Biology Researcher",
-      "cn": "人工智能 × 生物学"
-    },
-    "subtitle": {
-      "en": "Postdoctoral Scientist | HFSP Fellow | John Innes Centre",
-      "cn": "博士后研究员 | HFSP学者 | 约翰英纳斯中心"
-    },
-    "intro": {
-      "en": "Hi, I'm Haopeng. I'm committed to developing the next generation of AI–human collaborative paradigms for biological research.",
-      "cn": "你好，我是昊澎。我致力于开发下一代人工智能与人类协作范式，用于生物学研究。"
-    },
+    "name": "Haopeng Yu",
+    "title": "AI in Biology Researcher",
+    "subtitle": "Postdoctoral Scientist | HFSP Fellow | John Innes Centre",
+    "intro": "Hi, I'm Haopeng. I'm committed to developing the next generation of AI–human collaborative paradigms for biological research.",
     "photo": "img/hyu_photo.png",
     "social": {
       "email": "haopeng.yu@jic.ac.uk",
@@ -29,269 +17,149 @@
   "education": [
     {
       "year": "2014-2020",
-      "degree": {
-        "en": "PhD in Bioinformatics",
-        "cn": "生物信息学 博士"
-      },
-      "institution": {
-        "en": "Direct PhD Program, Northwest A&F University, Yangling, Shaanxi, China",
-        "cn": "西北农林科技大学 硕博连读项目，陕西杨凌，中国"
-      }
+      "degree": "PhD in Bioinformatics",
+      "institution": "Direct PhD Program, Northwest A&F University, Yangling, Shaanxi, China"
     },
     {
       "year": "2010-2014",
-      "degree": {
-        "en": "Bachelor's in Biotechnology",
-        "cn": "生物技术 学士"
-      },
-      "institution": {
-        "en": "Northwest A&F University, Yangling, Shaanxi, China",
-        "cn": "西北农林科技大学，陕西杨凌，中国"
-      }
+      "degree": "Bachelor's in Biotechnology",
+      "institution": "Northwest A&F University, Yangling, Shaanxi, China"
     }
   ],
   "employment": [
     {
       "year": "2021-Present",
-      "position": {
-        "en": "Postdoctoral Scientist",
-        "cn": "博士后科学家"
-      },
+      "position": "Postdoctoral Scientist",
       "details": [
-        {
-          "en": "Human Frontier Science Program (HFSP) Fellow",
-          "cn": "人类前沿科学计划(HFSP)学者"
-        },
-        {
-          "en": "John Innes Centre, UK",
-          "cn": "约翰英纳斯中心，英国"
-        }
+        "Human Frontier Science Program (HFSP) Fellow",
+        "John Innes Centre, UK"
       ]
     }
   ],
   "grants": [
     {
       "year": "2024-2027",
-      "title": {
-        "en": "BBSRC Bioinformatics and Biological Resources Fund",
-        "cn": "BBSRC 生物信息学与生物资源基金"
-      },
-      "role": {
-        "en": "Research and Innovation Associate",
-        "cn": "研究与创新员"
-      },
+      "title": "BBSRC Bioinformatics and Biological Resources Fund",
+      "role": "Research and Innovation Associate",
       "amount": "£1.15M"
     },
     {
       "year": "2024-2025",
-      "title": {
-        "en": "Research Committee for Institute Development Grant (IDG)",
-        "cn": "研究委员会研究所发展基金(IDG)"
-      },
-      "description": {
-        "en": "PlantAIGenius: Revolutionizing Plant Science Research with AI",
-        "cn": "植物AI：用人工智能革新植物科学研究"
-      },
-      "role": {
-        "en": "Co-investigator",
-        "cn": "共同研究员"
-      },
+      "title": "Research Committee for Institute Development Grant (IDG)",
+      "description": "PlantAIGenius: Revolutionizing Plant Science Research with AI",
+      "role": "Co-investigator",
       "amount": "£23K"
     },
     {
       "year": "2025-2035",
-      "title": {
-        "en": "Faraday Discovery Fellowships",
-        "cn": "法拉第发现研究员基金"
-      },
-      "role": {
-        "en": "Participant",
-        "cn": "参与者"
-      },
+      "title": "Faraday Discovery Fellowships",
+      "role": "Participant",
       "amount": "£8M"
     }
   ],
   "awards": [
     {
       "year": "2021-2024",
-      "title": {
-        "en": "Human Frontier Science Program (HFSP) Long-Term Fellowship",
-        "cn": "人类前沿科学计划(HFSP)长期奖学金"
-      },
+      "title": "Human Frontier Science Program (HFSP) Long-Term Fellowship",
       "amount": "£240K"
     },
     {
       "year": "2024",
-      "title": {
-        "en": "Special Bonus and Exceptional Performance Award",
-        "cn": "特别奖金与杰出表现奖"
-      },
-      "institution": {
-        "en": "Norwich BioScience Institutes",
-        "cn": "诺里奇生物科学研究院"
-      },
+      "title": "Special Bonus and Exceptional Performance Award",
+      "institution": "Norwich BioScience Institutes",
       "amount": "£1,000"
     },
     {
       "year": "2022",
-      "title": {
-        "en": "GENius of the Month",
-        "cn": "约翰英纳斯中心天才奖"
-      },
-      "institution": {
-        "en": "John Innes Centre",
-        "cn": "约翰英纳斯中心"
-      }
+      "title": "GENius of the Month",
+      "institution": "John Innes Centre"
     }
   ],
   "academicService": {
     "peerReview": {
-      "title": {
-        "en": "Peer Review Contributions",
-        "cn": "同行评审贡献"
-      },
-      "journals": {
-        "en": "Briefings in Bioinformatics, Nature, NAR Genomics and Bioinformatics, Non-Coding RNA, Computational and Structural Biotechnology Journal",
-        "cn": "《自然》、《生物信息学简报》、《NAR基因组学与生物信息学》、《非编码RNA》、《计算与结构生物技术杂志》"
-      }
+      "title": "Peer Review Contributions",
+      "journals": "Briefings in Bioinformatics, Nature, NAR Genomics and Bioinformatics, Non-Coding RNA, Computational and Structural Biotechnology Journal"
     },
     "editorial": {
-      "title": {
-        "en": "Editorial Responsibilities",
-        "cn": "编辑职责"
-      },
-      "journal": {
-        "en": "International Journal of Molecular Sciences",
-        "cn": "《国际分子科学杂志》"
-      },
-      "topics": {
-        "en": "\"Research on Artificial Intelligence in Plant Biology\", \"Machine Learning in RNA and Chromatin Dynamics\"",
-        "cn": "\"植物生物学中的人工智能研究\"、\"RNA与染色质动力学中的机器学习\""
-      }
+      "title": "Editorial Responsibilities",
+      "journal": "International Journal of Molecular Sciences",
+      "topics": "\"Research on Artificial Intelligence in Plant Biology\", \"Machine Learning in RNA and Chromatin Dynamics\""
     },
     "mentoring": {
-      "title": {
-        "en": "Mentor Experience",
-        "cn": "指导经验"
-      },
-      "description": {
-        "en": "Supervised 1 PhD student at John Innes Centre, 2 Master's students, and about 5 undergraduate students at Northwest A&F University",
-        "cn": "指导约翰英纳斯中心1名博士生、2名硕士生及西北农林科技大学约5名本科生"
-      }
+      "title": "Mentor Experience",
+      "description": "Supervised 1 PhD student at John Innes Centre, 2 Master's students, and about 5 undergraduate students at Northwest A&F University"
     }
   },
   "presentations": [
     {
       "year": "2025",
       "type": "Oral",
-      "title": {
-        "en": "Norwich RNA Club - Norwich, UK",
-        "cn": "诺里奇RNA俱乐部 - 英国诺里奇"
-      }
+      "title": "Norwich RNA Club - Norwich, UK"
     },
     {
       "year": "2025",
       "type": "Oral",
-      "title": {
-        "en": "New Phytologist Next Generation Scientists Symposium - Birmingham, UK",
-        "cn": "新植物学家新一代科学家研讨会 - 英国伯明翰"
-      }
+      "title": "New Phytologist Next Generation Scientists Symposium - Birmingham, UK"
     },
     {
       "year": "2025",
       "type": "Oral",
-      "title": {
-        "en": "RNA-AI Conference - Monte Verita, Switzerland",
-        "cn": "2025 RNA-AI会议 - 瑞士真理之山"
-      }
+      "title": "RNA-AI Conference - Monte Verita, Switzerland"
     },
     {
       "year": "2025",
       "type": "Oral",
-      "title": {
-        "en": "CEPAMS Annual Symposium - Shanghai, China",
-        "cn": "2025 CEPAMS年度研讨会 - 中国上海"
-      }
+      "title": "CEPAMS Annual Symposium - Shanghai, China"
     },
     {
       "year": "2024",
       "type": "Oral",
-      "title": {
-        "en": "Cambridge Chem&Bio Forum - Cambridge, UK",
-        "cn": "剑桥化学与生物论坛 - 英国剑桥"
-      }
+      "title": "Cambridge Chem&Bio Forum - Cambridge, UK"
     },
     {
       "year": "2024",
       "type": "Oral",
-      "title": {
-        "en": "JIC/TSL Annual Science Meeting - Norwich, UK",
-        "cn": "JIC/TSL年度科学会议 - 英国诺里奇"
-      }
+      "title": "JIC/TSL Annual Science Meeting - Norwich, UK"
     },
     {
       "year": "2024",
       "type": "Poster",
-      "title": {
-        "en": "20th RSC Nucleic Acids Forum - London, UK",
-        "cn": "第20届英国皇家化学院RSC核酸论坛 - 英国伦敦"
-      }
+      "title": "20th RSC Nucleic Acids Forum - London, UK"
     },
     {
       "year": "2024",
       "type": "Oral",
-      "title": {
-        "en": "Norwich RNA Club - Norwich, UK",
-        "cn": "诺里奇RNA俱乐部 - 英国诺里奇"
-      }
+      "title": "Norwich RNA Club - Norwich, UK"
     },
     {
       "year": "2024",
       "type": "Oral",
-      "title": {
-        "en": "RNA UK 2024 Meeting - Windermere, UK",
-        "cn": "RNA UK 2024会议 - 英国温德米尔"
-      }
+      "title": "RNA UK 2024 Meeting - Windermere, UK"
     },
     {
       "year": "2023",
       "type": "Oral",
-      "title": {
-        "en": "22nd HFSP Awardees Meeting - Cape Town, South Africa",
-        "cn": "第22届HFSP获奖者会议 - 南非开普敦"
-      }
+      "title": "22nd HFSP Awardees Meeting - Cape Town, South Africa"
     },
     {
       "year": "2023",
       "type": "Oral",
-      "title": {
-        "en": "19th RSC Nucleic Acids Forum - London, UK",
-        "cn": "第19届英国皇家化学院RSC核酸论坛 - 英国伦敦"
-      }
+      "title": "19th RSC Nucleic Acids Forum - London, UK"
     },
     {
       "year": "2023",
       "type": "Poster",
-      "title": {
-        "en": "28th RNA Society Annual Meeting - Singapore",
-        "cn": "第28届RNA学会年会 - 新加坡"
-      }
+      "title": "28th RNA Society Annual Meeting - Singapore"
     },
     {
       "year": "2023",
       "type": "Oral",
-      "title": {
-        "en": "Human Centric Artificial/Computational Intelligence and Applications Workshop - Exeter, UK",
-        "cn": "以人为本的人工/计算智能与应用研讨会 - 英国埃克塞特"
-      }
+      "title": "Human Centric Artificial/Computational Intelligence and Applications Workshop - Exeter, UK"
     },
     {
       "year": "2022",
       "type": "Oral",
-      "title": {
-        "en": "21st HFSP Awardees Meeting - Virtual",
-        "cn": "第21届HFSP获奖者会议 - 线上"
-      }
+      "title": "21st HFSP Awardees Meeting - Virtual"
     }
   ],
   "publications": [

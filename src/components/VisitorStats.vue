@@ -7,11 +7,11 @@
         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
       </svg>
-      <span>{{ lang === 'en' ? 'Visitor Stats' : '访问统计' }}</span>
+      <span>Visitor Stats</span>
     </div>
     <div class="stats-content">
       <div class="stat-item">
-        <div class="stat-label">{{ lang === 'en' ? 'Total Views' : '总访问量' }}</div>
+        <div class="stat-label">Total Views</div>
         <div class="stat-value">
           <span id="busuanzi_value_page_pv">
             <span class="loading-dot">•</span>
@@ -22,7 +22,7 @@
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
-        <div class="stat-label">{{ lang === 'en' ? 'Visitors' : '访客数' }}</div>
+        <div class="stat-label">Visitors</div>
         <div class="stat-value">
           <span id="busuanzi_value_site_uv">
             <span class="loading-dot">•</span>
@@ -38,16 +38,12 @@
 <script setup>
 import { onMounted } from 'vue'
 
-const props = defineProps({
-  isDark: Boolean,
-  lang: {
-    type: String,
-    default: 'en'
-  }
+defineProps({
+  isDark: Boolean
 })
 
 onMounted(() => {
-  // 等待不蒜子脚本加载完成
+  // Wait for busuanzi script to load
   const checkBusuanzi = setInterval(() => {
     if (window.busuanzi) {
       clearInterval(checkBusuanzi)

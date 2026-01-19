@@ -13,12 +13,6 @@
             <a @click="scrollToSection('publications')" class="nav-link" :class="{ active: activeSection === 'publications' }">Publications</a>
           </div>
           <div class="nav-controls">
-            <n-select
-              v-model:value="currentLang"
-              :options="languageOptions"
-              size="small"
-              style="width: 120px;"
-            />
             <n-button
               quaternary
               circle
@@ -45,12 +39,12 @@
             <div class="photo-wrapper">
               <img :src="resumeData.personal.photo" alt="Profile Photo" class="profile-photo" />
             </div>
-            <h1 class="profile-name">{{ resumeData.personal.name[currentLang] }}</h1>
-            <p class="profile-title">{{ resumeData.personal.title[currentLang] }}</p>
-            <p class="profile-subtitle">{{ resumeData.personal.subtitle[currentLang] }}</p>
-            <p class="profile-intro">{{ resumeData.personal.intro[currentLang] }}</p>
+            <h1 class="profile-name">{{ resumeData.personal.name }}</h1>
+            <p class="profile-title">{{ resumeData.personal.title }}</p>
+            <p class="profile-subtitle">{{ resumeData.personal.subtitle }}</p>
+            <p class="profile-intro">{{ resumeData.personal.intro }}</p>
             <div class="social-links">
-              <a :href="'mailto:' + resumeData.personal.social.email" target="_blank" :title="currentLang === 'en' ? 'Email' : '邮箱'" class="social-link">
+              <a :href="'mailto:' + resumeData.personal.social.email" target="_blank" title="Email" class="social-link">
                 <n-icon size="20"><MailOutline /></n-icon>
               </a>
               <a :href="resumeData.personal.social.linkedin" target="_blank" :title="'LinkedIn'" class="social-link">
@@ -78,10 +72,10 @@
           <section id="education-employment" class="content-section">
             <div class="two-column-layout">
               <div class="column" id="education">
-                <Education :data="resumeData.education" :lang="currentLang" />
+                <Education :data="resumeData.education" />
               </div>
               <div class="column" id="employment">
-                <Employment :data="resumeData.employment" :lang="currentLang" />
+                <Employment :data="resumeData.employment" />
               </div>
             </div>
           </section>
@@ -90,30 +84,28 @@
           <section id="grants-awards" class="content-section">
             <div class="two-column-layout">
               <div class="column" id="grants">
-                <Grants :data="resumeData.grants" :lang="currentLang" />
+                <Grants :data="resumeData.grants" />
               </div>
               <div class="column" id="awards">
-                <Awards :data="resumeData.awards" :lang="currentLang" />
+                <Awards :data="resumeData.awards" />
               </div>
             </div>
           </section>
 
           <!-- Presentations Section -->
           <section id="presentations" class="content-section">
-            <Presentations :data="resumeData.presentations" :lang="currentLang" />
+            <Presentations :data="resumeData.presentations" />
           </section>
 
           <!-- Publications Section -->
           <section id="publications" class="content-section">
-            <Publications :data="resumeData.publications" :lang="currentLang" />
+            <Publications :data="resumeData.publications" />
           </section>
 
           <!-- Footer -->
           <footer class="content-footer">
-            <VisitorStats :isDark="isDark" :lang="currentLang" />
-            <p class="copyright">
-              {{ currentLang === 'en' ? '© 2025 Haopeng Yu. All rights reserved.' : '© 2025 于昊澎. 版权所有.' }}
-            </p>
+            <VisitorStats :isDark="isDark" />
+            <p class="copyright">© 2025 Haopeng Yu. All rights reserved.</p>
           </footer>
         </main>
       </div>
@@ -129,7 +121,6 @@ import {
   NLayoutHeader,
   NButton,
   NIcon,
-  NSelect,
   darkTheme
 } from 'naive-ui'
 import {
@@ -154,17 +145,9 @@ import ParticlesBackground from './components/ParticlesBackground.vue'
 import VisitorStats from './components/VisitorStats.vue'
 
 // State
-const currentLang = ref('en')
 const isDark = ref(false)
-const selectedPublication = ref(null)
 const contentPanel = ref(null)
 const activeSection = ref('education')
-
-// Language options
-const languageOptions = [
-  { label: 'English', value: 'en' },
-  { label: '中文', value: 'cn' }
-]
 
 // Theme
 const themeOverrides = {

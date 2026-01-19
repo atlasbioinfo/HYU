@@ -1,23 +1,23 @@
 <template>
   <section class="section">
-    <h2 class="section-title">{{ lang === 'en' ? 'Academic Service' : '学术服务' }}</h2>
+    <h2 class="section-title">Academic Service</h2>
 
     <div class="service-item">
-      <h3>{{ data.peerReview.title[lang] }}</h3>
-      <p>{{ data.peerReview.journals[lang] }}</p>
+      <h3>{{ data.peerReview.title }}</h3>
+      <p>{{ data.peerReview.journals }}</p>
     </div>
 
     <div class="service-item">
-      <h3>{{ data.editorial.title[lang] }}</h3>
+      <h3>{{ data.editorial.title }}</h3>
       <p>
-        {{ data.editorial.journal[lang] }}<br>
-        ({{ data.editorial.topics[lang] }})
+        {{ data.editorial.journal }}<br>
+        ({{ data.editorial.topics }})
       </p>
     </div>
 
     <div class="service-item">
-      <h3>{{ data.mentoring.title[lang] }}</h3>
-      <p>{{ data.mentoring.description[lang] }}</p>
+      <h3>{{ data.mentoring.title }}</h3>
+      <p>{{ data.mentoring.description }}</p>
     </div>
   </section>
 </template>
@@ -26,10 +26,6 @@
 defineProps({
   data: {
     type: Object,
-    required: true
-  },
-  lang: {
-    type: String,
     required: true
   }
 })
